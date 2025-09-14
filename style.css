@@ -5,7 +5,6 @@
 *::after {
   box-sizing: border-box;
 }
-
 body,
 h1,
 h2,
@@ -26,88 +25,127 @@ button {
 ul {
   list-style: none;
 }
-
 /* スタイルのリセット終了 */
 
-/* サイドバーとメインコンテンツを包むための要素のスタイルを書いてください */
+/* サイドバーとメインコンテンツを包むための要素 */
 .dashboard-container {
   display: flex;
   height: 100vh;
 }
 
-/* サイドバーに関連するスタイルを書いてください */
-aside {
+/* サイドバー */
+.sidebar {
   width: 256px;
-  flex-shrink: 0;
   background-color: #f5f5f5;
   border-right: 1px solid #e0e0e0;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  flex-shrink: 0;
 }
-
-.side-header {
+.sidebar-header {
   padding: 20px;
   border-bottom: 1px solid #e0e0e0;
 }
-
-a {
+.sidebar-home {
   font-size: 1.25rem;
   font-weight: 600;
+  color: #4f7cac;
   display: flex;
   align-items: center;
   gap: 8px;
   text-decoration: none;
 }
 
-/* メインコンテンツに関連するスタイルを書いてください */
-.main-container {
+/* Sidebarメニュー */
+.sidebar ul {
+  padding: 0;
+  margin: 0;
+  list-style: none; /* 念のため再度指定 */
+}
+
+/* 各メニュー項目 */
+.sidebar-menu-item {
+  padding: 12px 20px;
+  cursor: pointer; /* カーソルをポインターに変更し、クリック可能であることを示す */
+  transition: background-color 0.2s ease; /* ホバー時の滑らかなアニメーション */
+  display: flex; /* アイコンとテキストを横並びにするため */
+  align-items: center; /* 垂直方向の中央揃え */
+  gap: 12px; /* アイコンとテキストの間隔 */
+}
+
+/* ホバー時のスタイル */
+.sidebar-menu-item:hover {
+  background-color: #e0e0e0;
+}
+/* メインコンテンツ */
+.main-content {
   flex: 1;
 }
 
-.home-header {
-  background-color: white;
+/* セクションヘッダー */
+.section-header {
+  background-color: #ffffff;
   padding: 32px;
   border-bottom: 1px solid #e0e0e0;
   text-align: center;
 }
-
-#icon {
-  /*id属性*/
-  height: 96px;
-  width: 96px;
-  background-color: #4f7cac;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 24px;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 2.5rem;
-  color: white;
-}
-
-.title {
+.section-title {
   font-size: 1.5rem;
   font-weight: 600;
   color: #2f2f2f;
-  margin-bottom: 24px;
+  margin-bottom: 8px;
 }
-
-.sub-title {
+.section-subtitle {
   font-size: 1.125rem;
   color: #757575;
-  margin-bottom: 25px;
+  margin-bottom: 24px;
 }
-
-.main-message {
+.section-description {
   max-width: 672px;
-  margin: 0px auto;
-  padding: 32px;
+  margin: 0 auto;
   color: #757575;
+  padding: 32px;
+}
+.section-description p {
+  margin-bottom: 16px;
 }
 
-p {
-  margin-bottom: 16px;
+/* プロフィールサークル */
+.profile-circle {
+  width: 96px;
+  height: 96px;
+  background-color: #4f7cac;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+}
+.profile-circle span {
+  font-size: 2.5rem;
+  color: #ffffff;
+}
+
+/* セクション本文 */
+
+.hidden {
+  display: none;
+}
+/* 単位変換セクションのスタイルを以下に記載してください */
+.converter-card {
+  min-height: 300px;
+  max-width: 448px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.convertValue {
+  display: block;
+}
+
+.converter-result {
+  background-color: antiquewhite;
 }

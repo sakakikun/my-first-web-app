@@ -1,43 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dashboard</title>
+    <!-- 独自のCSSファイルを読み込み -->
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dashboard</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
-</head>
-
-<body>
-  <div class="dashboard-container">
-    <aside>
-      <header class="side-header">
-        <a href="#" data-tab="home">
-          <span class="ri-home-line"></span>
-          Home
-        </a>
-      </header>
-    </aside>
-
-    <main class="main-container">
-      <section id="home">
-        <header class="home-header">
-          <section id="icon"><span class="ri-user-smile-line"></span></section>
-          <h1 class="title">Welcome to Your Personal Dashboard</h1>
-          <h2 class="sub-title">Make your daily life more convenient and enjoyable</h2>
-        </header>
-        <div class="main-message">
-          <p>This dashboard is a tool to enrich your daily life. You can easily use essential features such as diary
-            entries, memo
-            management, and checking weather information.</p>
-          <p>Small daily records become irreplaceable memories, and efficient task management leads to fulfilling days.
-            Please use
-            this as a partner that supports your everyday life.</p>
+  <body>
+    <div class="dashboard-container">
+      <!-- 左サイドバー (固定) -->
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <a href="#" class="sidebar-home tab-item" data-tab="home">
+            <span class="ri-home-line"></span>
+            <span>Home</span>
+          </a>
         </div>
-      </section>
-    </main>
-  </div>
-</body>
 
+        <!-- サイドバーにメニューを追加してください -->
+        <ul>
+          <li class="sidebar-menu-item tab-item" data-tab="converter">
+            <span class="ri-scales-3-line">Unit Converter</span>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- 右メインコンテンツ (スクロール可) -->
+      <main class="main-content">
+        <!-- ホームセクション -->
+        <section class="content-section" id="home">
+          <header class="section-header">
+            <div class="profile-circle">
+              <span class="ri-user-smile-line"></span>
+            </div>
+            <h1 class="section-title">Welcome to Your Personal Dashboard</h1>
+            <p class="section-subtitle">
+              Make your daily life more convenient and enjoyable
+            </p>
+          </header>
+          <div class="section-body">
+            <div class="section-description">
+              <p>
+                This dashboard is a tool to enrich your daily life. You can
+                easily use essential features such as diary entries, memo
+                management, and checking weather information.
+              </p>
+              <p>
+                Small daily records become irreplaceable memories, and efficient
+                task management leads to fulfilling days. Please use this as a
+                partner that supports your everyday life.
+              </p>
+            </div>
+          </div>
+        </section>
+        <!-- End ホームセクション -->
+        <section class="content-section hidden" id="converter">
+          <header class="section-header">
+            <h1 class="section-title">Length Unit Conversion</h1>
+          </header>
+          <div class="section-body"></div>
+          <div class="converter-card">
+            <form action="" class="converter-form">
+              <div class="convertValue">
+                <p><label for="convertValue">Value</label></p>
+                <input
+                  id="convertValue"
+                  class="converter-input"
+                  type="number"
+                  value="1000"
+                />
+              </div>
+              <span class="from">
+                <label for="converter-from">From</label>
+                <select
+                  name="converter-from"
+                  id="converter-from"
+                  class="converter-from"
+                ></select>
+              </span>
+              <span class="to">
+                <label for="converter-to">To</label>
+                <select
+                  name="converter-to"
+                  id="converter-to"
+                  class="converter-to"
+                ></select>
+              </span>
+              <div class="converter-result"></div>
+            </form>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="main.js" type="module"></script>
+  </body>
 </html>
