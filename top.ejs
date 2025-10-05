@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>top</title>
+  </head>
+  <body>
+    <div class="header">
+      <h1>初めてのWEBアプリ</h1>
+    </div>
+    <div class="sidebar">
+      <a href="/users">登録情報はこちらへ</a>
+      <a href="/new">新規ユーザー登録</a>
+      <aside>
+        <% const item=[ { title: "やったこと", content: "やったことの内容" },
+        {title: "やること", content: "やることの内容" }, { title:
+        "備忘録",content: "備忘録の内容" } ] %>
+        <ul>
+          <% item.forEach(i => { %>
+          <li class="sidebar-content"><%= i.title %></li>
+          <% }); %>
+          <!-- もしくは
+          <li class="sidebar-content">やったこと</li>
+          <li class="sidebar-content">やること</li>
+          <li class="sidebar-content">備忘録</li> -->
+        </ul>
+      </aside>
+    </div>
+    <div class="container">
+      <ul>
+        <li>jsをマスターする</li>
+        <li>HTMLを書けるようになる</li>
+        <li>CSSで綺麗なデザイン!</li>
+      </ul>
+    </div>
+    <div class="footer"></div>
+  </body>
+</html>

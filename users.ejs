@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ユーザー一覧</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <h1>登録ユーザー一覧</h1>
+
+    <% if (users && users.length > 0) { %>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>名前</th>
+          <th>メールアドレス</th>
+          <th>登録日時</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% users.forEach(user => { %>
+        <tr>
+          <td><%= user.id %></td>
+          <td><%= user.name %></td>
+          <td><%= user.email %></td>
+          <td>
+            <%= user.created_at ? user.created_at.toLocaleString() : 'N/A' %>
+          </td>
+          <td>
+            <a href="/edit/<%= user.id %>">編集</a>
+
+            <form
+              action="/delete/<%= user.id %>"
+              method="POST"
+              style="display: inline"
+            >
+              <button
+                type="submit"
+                onclick="return confirm('本当にこのユーザーを削除しますか？');"
+              >
+                削除
+              </button>
+            </form>
+          </td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+    <% } else { %>
+    <p>登録されているユーザーはいません。</p>
+    <% } %>
+
+    <hr />
+    <a href="/">トップへ戻る</a>
+  </body>
+</html>
